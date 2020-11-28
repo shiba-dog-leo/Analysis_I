@@ -1,0 +1,40 @@
+
+\section{数}
+
+\subsection{実数}
+\subsection{自然数，整数}
+\subsection{順序体}
+\subsubsection{}
+\subsubsection{}
+\begin{ans}
+    $L(A)$を$A$の下界，$U(-A)$を$-A$の上界とする：
+    \begin{align*}
+        & L(A) = \{ l \in \mathbb{R} ~ | ~ \forall a \in A ~ l \leq a \}\\
+        & U(-A) = \{ -u \in \mathbb{R} ~ | ~ \forall -a \in -A ~ -a \leq -u \}.
+    \end{align*}
+    いま
+    \begin{align*}
+        & -m = \sup (-A)\\
+        \Leftrightarrow & \begin{cases}
+            -m \in U(-A)\\
+            \forall -u \in U(-A) ~ -m \leq -u
+        \end{cases}\\
+        \Leftrightarrow & \begin{cases}
+            m \in -U(-A)\\
+            \forall u \in -U(-A) ~ u \leq m.
+        \end{cases}
+    \end{align*}
+    もし$-U(-A) = L(A)$なら，
+    \begin{align*}
+        \Leftrightarrow & \begin{cases}
+            m \in L(A)\\
+            \forall u \in L(A) ~ u \leq m
+        \end{cases}\\
+        \Leftrightarrow & m = \inf A
+    \end{align*}
+    である．以下，$-U(-A) = L(A)$を示す．
+\end{ans}
+
+
+\subsection{実数体の構成}
+\subsection{複素数}

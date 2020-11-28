@@ -1,0 +1,39 @@
+\documentclass[12pt, dvipdfmx, fleqn]{jarticle}%日本語,[dvipdfmx]は全てのパッケージでdvipdfmxを指定するために必要
+%\usepackage[top=15truemm, bottom=20truemm]{geometry}%余白調整
+\usepackage{ascmac}%枠囲み
+\usepackage{amsmath}%文中の分数がつぶれないようにするため
+\usepackage{amssymb}%白抜き文字
+\usepackage{enumerate}%箇条書きのカウンタを整えるため
+\usepackage{framed,color}%影付けを行うため
+\usepackage{wrapfig}%図の回り込み
+
+\usepackage{tikz}%グラフの描画
+\usetikzlibrary{intersections, calc}%tikzの補助
+
+
+\setlength{\mathindent}{60pt}%数式左揃え
+
+\definecolor{shadecolor}{gray}{0.85}%1.00に近づくほど灰色に近づく(明るくなる)
+
+\definecolor{lg}{rgb}{0.75,0.75,0.75} %lightgray色の定義
+\newenvironment{lgbar}{%
+  \def\FrameCommand{\textcolor{lg}{\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+%\newtheorem{thm}{定理}[part]%定理番号はpartごと
+\newtheorem{de}{定義}[section]
+%\newtheorem{prob}{問題}[section]
+%\newtheorem{ex}{例}[section]
+%\newtheorem{cor}{系}[section]
+%\newtheorem{prop}{命題}[section]
+%\newtheorem{fact}{事実}[section]
+%\newtheorem{rem}{Remark}[section]
+%\newtheorem{lem}{補題}[section]
+\newtheorem{ans}{解答}%[subsection]
+\renewcommand{\theans}{}%番号を表示しない
+%参考<https://www.lightstone.co.jp/latex/kb0078.html>
+
+\parskip=10pt plus 1pt%段落間隔調整
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%

@@ -1,0 +1,170 @@
+\documentclass[12pt]{jarticle}
+\usepackage[top=15truemm, bottom=20truemm]{geometry}%余白調整
+\usepackage{comment}%コメント
+
+%% ページサイズの指定（詳細）
+%\setlength{\topmargin}{0cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{0cm}
+%\setlength{\textheight}{23truecm}
+%\setlength{\textwidth}{16truecm}
+
+%% pdfのしおり作成（日本語，リンクの色指定など）
+\usepackage[dvips,usenames]{color}
+%\usepackage[dvipdfmx,usenames]{color}
+\usepackage[dvipdfmx,colorlinks,linkcolor=MidnightBlue,%
+urlcolor=blue,bookmarksopenlevel=4]{hyperref}
+\usepackage{pxjahyper}
+
+
+\usepackage{theorem}
+
+\usepackage{amsmath, amssymb}
+
+\usepackage[dvipdfmx]{graphicx}%画像表示用
+
+
+%% 練習用（定理環境の定義）
+\theorembodyfont{\rmfamily}       %% 定理環境の本文のフォント
+\theoremstyle{break}        %% 番号付けのスタイル
+\newtheorem{defn}{定義}[section]  %% 定理環境の定義
+
+\newtheorem{thm}[defn]{定理} %% theorem （定理）
+\newtheorem{prop}[defn]{命題} %% proposition（命題）
+\newtheorem{lem}[defn]{命題} %% lemma （補題）
+\newtheorem{rem}[defn]{注} %% remark （注）
+%%% ここに「例」の環境を定義する．
+\newtheorem{ex}[defn]{例}  %% example （例）
+
+
+
+\newtheorem{thms}{定理} %% theorem （定理）
+\renewcommand{\thethms}{\thesection.\Alph{thms}}
+
+%% proof環境
+\makeatletter
+\newenvironment{proof}[1][\proofname]{\par
+  \normalfont
+  \topsep6\p@\@plus6\p@ \trivlist
+  \item[\hskip\labelsep\bfseries
+    #1\@addpunct{}]\ignorespaces
+}{%
+  \nobreak\hfill\hbox{$\Box$}\endtrivlist
+}
+\makeatother
+%% proof環境（定義終わり）
+
+\newcommand{\proofname}{証明}
+\newenvironment{pf}{\proof[証明]}{\endproof}
+\newenvironment{pf*}[1]{\proof[#1]}{\endproof}
+
+
+
+\newcommand{\myclaim}{問題}
+\newtheorem{claim}[defn]{\myclaim}
+
+\newenvironment{myclm}[1]{%
+  \renewcommand{\myclaim}{#1}\begin{claim}}{%
+  \end{claim}\renewcommand{\myclaim}{問題}}
+
+
+\newcommand{\?}{\textcolor{red}{??}}
+
+%氏名右寄せ
+\makeatletter
+\def\@maketitle{% 
+\begin{flushright}% 
+{\large \@date}% 日付 
+\end{flushright}% 
+\begin{center}% 
+{\LARGE \@title \par}% タイトル 
+\end{center}% 
+\begin{flushright}% 
+{\large \@author}% 著者 
+\end{flushright}% 
+\par\vskip 12pt
+}
+\makeatother
+
+\title{天才科学者列伝 ~ 第6回課題}
+\date{}
+\author{\vspace{5mm}数理科学EP ~~ 学籍番号2064227 ~~ 福田誠}
+
+\parskip=10pt plus 1pt%段落間隔調整
+\begin{document}
+
+%% 以下のコマンドにより，題名，著者名，日付が出力される
+\maketitle
+
+%\abstract{%
+%  具体例を用いて，数列の項の順番を交換した際に，級数（数列の和）がどのように変化するか
+%  を調べる．
+%}
+
+\section*{問題}
+
+これまでに出てきた登場人物の中で、最も印象的だった人物を教えて下さい。
+その理由も書いて下さい。
+
+\section*{解答}
+
+ユークリッド
+
+ユークリッドは学問としての数学の原点だといえると思う．
+古代バビロニアの時代にも数学はあり，古代ギリシャ，古代ローマの時代にも数学はあった．しかしいずれの数学も人間の直感を利用した「見てわかる」ものであった．ユークリッド幾何学にもその痕跡は残るが，彼の著書『原論』における論理展開の形式は現在にまで続くものである．
+
+大学の数学の教科書では有限個の公理から始めて，すべての命題を証明していくという公理主義の流儀に従っているが，小学校から高校まではこの考え方を前面に出した教科書はない．公理主義という考え方に出会ってから，私と数学の関係性は変わり，より数学が好きになった．
+
+高校までの数学では公理は表に出てこなかった．そのため，受験参考書に次のような記述があると不安な気持ちになった．
+
+\begin{quote}
+    $\cdots ~a$が実数のとき，$a^2 \geq 0$だから$\cdots$
+
+    \begin{proof}
+        \begin{align*}
+            a + (-a) = 0
+        \end{align*}
+        両辺に$(-a)$かけて
+        \begin{align*}
+            \{ a + (-a) \} \cdot (-a) = 0 \cdot (-a)\\
+            a \cdot (-a) + (-a)(-a) = 0\\
+            -a^2 + (-a)^2 = 0\\
+        \end{align*}
+        両辺に$a^2$足して
+        \begin{align*}
+            -a^2 + (-a)^2 + a^2= 0 + a^2\\
+            (-a)^2 = a^2
+        \end{align*}
+        $a \geq 0$のとき$a^2 \geq 0$だから，$a \leq 0$のときも
+        \begin{align*}
+            a^2 = (-a)^2 \geq 0 .
+        \end{align*}
+    \end{proof}
+\end{quote}
+証明のはじめから最後まで，おかしな変形や飛躍はないのだが，途中途中の計算の正当性は疑わなくてよいのだろうか．乗法や加法に関する法則は疑わなくてよいのだろうか．その理由がわからなかった．「当たり前だから疑わない」というのであれば，$a^2\geq 0 ~~ (a \in \mathbb{R})$も当たり前なのだからいちいち証明する必要があるのか？
+
+このような気持ちが常に頭の中で巡回し，「数学って厳密なのか厳密でないのかよくわからない」という感覚があり，腑に落ちなかった．このことは受験における答案にも現れ，問題に対してそれほど重要でない箇所ばかり詳細に記述し，本質的な部分の説明が足りないということがよくあった．答案添削の指摘を見ても，「どうしてこの部分は詳細に記述し，自分の書いた部分はそれほど説明しなくてもよいのか」ということがわからなかった．
+
+しかし公理主義という考え方に出会い，端的にいえば「公理は疑わない．それ以外の命題は公理によって示される．」という確信を持つことができた．上のような計算ができるのは実数が可換環だからであり，実数が可換環になるように定義されているにすぎない．このように疑うべきものとそうでないものが区別できるようになって初めて，数学が腑に落ちるようになった．そして数学は，何でもかんでも疑って「どうなんだろうね」で結論するような哲学的思弁とは一線を画す学問であるという確信を得た．
+
+以上のような私の中の変化は公理主義との出会いによるものであり，公理主義の源流としてのユークリッドは最も印象深い人物である．
+
+
+%以下のように使う
+%\cite[第4章, 45節]{Takagi}, \cite[第I章, $\S 5$,\ 第V章, $\S 3$]{Sugiura}
+%\begin{thebibliography}{99}
+%\bibitem{Takagi} 高木貞治, 定本解析概論, 岩波書店, (2011)
+%\bibitem{Sugiura} 杉浦光夫, 解析入門\ I, 基礎数学\ 2, 東京大学出版会, (2019)
+%\end{thebibliography}
+
+
+
+\end{document}
+
+
+
+
+%%% Local Variables:
+%%% mode: Japanese-latex
+%%% TeX-master: t
+%%% End:
