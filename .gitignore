@@ -2,4 +2,9 @@
 *.dvi
 *.log
 *.pdf
-*aux
+*.aux
+*.gz
+*.synctex
+
+#vscodeの設定ファイル
+*.vscode
